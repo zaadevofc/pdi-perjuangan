@@ -1,0 +1,290 @@
+<section class="px-5 pb-10 mt-20">
+  <img
+    src="img/img.jpeg"
+    alt="image"
+    class="mx-auto rounded-lg w-[900px]"
+  />
+  <div
+    class="container bg-red-700 mx-auto max-w-4xl rounded-lg px-8 py-7 mt-10"
+  >
+    <h1 class="text-2xl text-center mb-5 text-white font-semibold uppercase">
+      Registrasi
+    </h1>
+    <!-- appscript form -->
+    <form method="post" action="/insert" enctype="multipart/form-data">
+      <div class="flex flex-col sm:flex-row items-center gap-4">
+        <div class="flex flex-col mb-3 w-full">
+          <label class="mb-2 text-base md:text-lg text-white">Nama :</label>
+          <input
+            class="py-2 px-3 shadow-md border border-black bg-white rounded-md focus:outline-none text-black"
+            type="text"
+            name="nama"
+          />
+        </div>
+        <div class="flex flex-col mb-3 w-full">
+          <div class="flex flex-col">
+            <label class="mb-2 text-base md:text-lg text-white"
+              >Upload KTP, KK & KTA</label
+            >
+            <input
+              class="block w-full cursor-pointer border border-gray-200 shadow-sm rounded-md text-sm focus:z-10 focus:border-blue-500 focus:ring-blue-500 disabled:opacity-50 disabled:pointer-events-none bg-gray-200 dark:border-gray-700 dark:text-gray-400 file:border-0 file:me-4 file:py-2.5 file:px-4 dark:file:bg-white dark:file:text-gray-400"
+              type="file"
+              id="fileInput"
+              multiple
+              name="dokumen"
+            />
+          </div>
+        </div>
+      </div>
+      <div class="flex flex-col sm:flex-row items-center gap-4 w-full">
+        <div class="flex flex-col mb-5 w-full">
+          <label class="mb-2 text-base md:text-lg text-white">NIK :</label>
+          <input
+            class="py-2 px-3 shadow-md border border-black bg-white rounded-md focus:outline-none text-black"
+            type="number"
+            name="nik"
+          />
+        </div>
+        <div class="flex flex-col mb-5 w-full">
+          <label class="mb-2 text-base md:text-lg text-white">No KK :</label>
+          <input
+            class="py-2 px-3 shadow-md border border-black bg-white rounded-md focus:outline-none text-black"
+            type="number"
+            name="kk"
+          />
+        </div>
+      </div>
+      <div class="flex flex-col sm:flex-row items-center gap-4 w-full">
+        <div class="flex flex-col mb-3 w-full">
+          <label class="mb-2 text-base md:text-lg text-white">Alamat :</label>
+          <input
+            class="py-2 px-3 shadow-md border border-black bg-white rounded-md focus:outline-none text-black"
+            type="text"
+            name="alamat"
+          />
+        </div>
+        <div class="flex flex-col mb-3 w-full">
+          <label class="mb-2 text-base md:text-lg text-white"
+            >Kelurahan :</label
+          >
+          <input
+            class="py-2 px-3 shadow-md border border-black bg-white rounded-md focus:outline-none text-black"
+            type="text"
+            name="kelurahan"
+          />
+        </div>
+      </div>
+      <div class="flex flex-col mb-3">
+        <label class="mb-2 text-base md:text-lg text-white">Kecamatan :</label>
+        <input
+          class="py-2 px-3 shadow-md border border-black bg-white rounded-md focus:outline-none text-black"
+          type="text"
+          name="kecamatan"
+        />
+      </div>
+      <div class="flex flex-col sm:flex-row items-center gap-4 w-full">
+        <div class="flex flex-col w-full mb-3">
+          <label class="mb-2 text-base md:text-lg text-white">TPS :</label>
+          <input
+            class="py-2 px-3 shadow-md border border-black bg-white rounded-md focus:outline-none text-black"
+            type="text"
+            name="tps"
+          />
+        </div>
+        <div class="flex flex-col w-full mb-3">
+          <label class="mb-2 text-base md:text-lg text-white"
+            >Koordinator :</label
+          >
+          <input
+            class="py-2 px-3 shadow-md border border-black bg-white rounded-md focus:outline-none text-black"
+            type="text"
+            name="koordinator"
+          />
+        </div>
+      </div>
+      <!-- upload gambar multer -->
+      <div>
+        <button
+          type="submit"
+          id="submit-all"
+          class="px-7 mt-5 shadow-md active:scale-[.90] bg-red-500 border border-white rounded-md duration-300 ease-in-out py-2 block text-white font-semibold"
+        >
+          Kirim
+        </button>
+      </div>
+    </form>
+  </div>
+</section>
+
+<section class="flex flex-col gap-8 text-white items-center mb-20">
+  <h1 class="text-2xl font-bold">Data Pendafar</h1>
+
+  <!-- component -->
+  <div class="flex flex-col max-w-7xl w-full">
+    <div class="overflow-x-auto sm:mx-0.5 lg:mx-0.5">
+      <div class="py-2 inline-block min-w-full sm:px-6 lg:px-8">
+        <div class="overflow-hidden rounded-lg border-2 border-red-600">
+          <table class="min-w-full">
+            <thead class="bg-gray-300 border-b">
+              <tr>
+                <th
+                  scope="col"
+                  class="text-sm font-bold text-gray-900 px-6 py-4 text-center"
+                >
+                  No
+                </th>
+                <th
+                  scope="col"
+                  class="text-sm font-bold text-gray-900 px-6 py-4 text-center"
+                >
+                  Nama
+                </th>
+                <th
+                  scope="col"
+                  class="text-sm font-bold text-gray-900 px-6 py-4 text-center"
+                >
+                  NIK
+                </th>
+                <th
+                  scope="col"
+                  class="text-sm font-bold text-gray-900 px-6 py-4 text-center"
+                >
+                  KK
+                </th>
+                <th
+                  scope="col"
+                  class="text-sm font-bold text-gray-900 px-6 py-4 text-center"
+                >
+                  Alamat
+                </th>
+                <th
+                  scope="col"
+                  class="text-sm font-bold text-gray-900 px-6 py-4 text-center"
+                >
+                  Kelurahan
+                </th>
+                <th
+                  scope="col"
+                  class="text-sm font-bold text-gray-900 px-6 py-4 text-center"
+                >
+                  Kecamatan
+                </th>
+                <th
+                  scope="col"
+                  class="text-sm font-bold text-gray-900 px-6 py-4 text-center"
+                >
+                  TPS
+                </th>
+                <th
+                  scope="col"
+                  class="text-sm font-bold text-gray-900 px-6 py-4 text-center"
+                >
+                  Koordinator
+                </th>
+                <th
+                  scope="col"
+                  class="text-sm font-bold text-gray-900 px-6 py-4 text-center"
+                >
+                  Dokumen
+                </th>
+                <th
+                  scope="col"
+                  class="text-sm font-bold text-gray-900 px-6 py-4 text-center"
+                >
+                  Action
+                </th>
+              </tr>
+            </thead>
+            <tbody>
+              <% list_data.forEach((x, i) => { %>
+              <tr class="bg-gray-100 border-b border-red-300">
+                <td
+                  class="text-center px-6 py-4 whitespace-nowrap text-sm font-medium text-gray-900"
+                >
+                  <%= i + 1 %>
+                </td>
+                <td
+                  class="text-center text-sm text-gray-700 font-medium px-3 py-4"
+                >
+                  <%= x.nama %>
+                </td>
+                <td
+                  class="text-center text-sm text-gray-700 font-medium px-3 py-4"
+                >
+                  <%= x.nik %>
+                </td>
+                <td
+                  class="text-center text-sm text-gray-700 font-medium px-3 py-4"
+                >
+                  <%= x.kk %>
+                </td>
+                <td
+                  class="text-center text-sm text-gray-700 font-medium px-6 py-4 whitespace-nowrap"
+                >
+                  <%= x.alamat %>
+                </td>
+                <td
+                  class="text-center text-sm text-gray-700 font-medium px-3 py-4"
+                >
+                  <%= x.kelurahan %>
+                </td>
+                <td
+                  class="text-center text-sm text-gray-700 font-medium px-3 py-4"
+                >
+                  <%= x.kecamatan %>
+                </td>
+                <td
+                  class="text-center text-sm text-gray-700 font-medium px-3 py-4"
+                >
+                  <%= x.tps %>
+                </td>
+                <td
+                  class="text-center text-sm text-gray-700 font-medium px-3 py-4"
+                >
+                  <%= x.koordinator %>
+                </td>
+                <td
+                  class="flex gap-1 justify-center text-center text-sm text-gray-700 font-medium px-3 py-4"
+                >
+                  <% x.dokumen.forEach((y, c) => { %>
+                  <a class="text-blue-500" target="_blank" href="<%= y %>"
+                    >[<%= c + 1 %>]</a
+                  >
+                  <% }) %>
+                </td>
+                <form method="post" action="/delete">
+                  <input
+                    name="id"
+                    value="<%= x.id %>"
+                    type="text"
+                    class="hidden"
+                  />
+                  <td
+                    class="text-center text-sm text-gray-700 font-medium px-3 py-4"
+                  >
+                    <button
+                      type="submit"
+                      class="hover:scale-[1.5] transition-all"
+                    >
+                      ❌
+                    </button>
+                  </td>
+                </form>
+              </tr>
+              <% }) %>
+            </tbody>
+          </table>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <div class="mt-5">
+    <p
+      class="text-sm xs:text-base lg:text-lg text-white text-center text-ghost font-nunitosans tracking-wide font-semibold"
+    >
+      &copy; 2024 Copyright -
+      <span class="font-bold">Anonymous</span>
+    </p>
+  </div>
+</section>
